@@ -1,19 +1,21 @@
 package com.company;
 
+import java.util.*;
+
 public class Main {
 
 	public static void main(String[] args) {
 
-		//a
-		System.out.println(-5 + 8 * 6);
+		Scanner input = new Scanner(System.in);
 
-		//b
-		System.out.println((55 + 9) % 9);
+		System.out.println("Input first number");
+		int numberOne = input.nextInt();
 
-		//c
-		System.out.println(20 + -3 * 5 / 8);
+		System.out.println("Input second number");
+		int numberTwo = input.nextInt();
 
-		//d
-		System.out.println(5 + 15 / 3 * 2 - 8 % 3);
+		int product = numberOne * numberTwo;
+
+		System.out.println(numberOne + " x " + numberTwo + " = " + product);
 	}
 }
