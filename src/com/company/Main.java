@@ -8,11 +8,13 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Input a number");
-		int number = input.nextInt();
+		System.out.println("Radius =");
+		double radius = input.nextDouble();
 
-		for (int i = 1; i < 11; i++) {
-			System.out.println(number + " x " + i + " = " + number * i);
-		}
+		double perimeter = 2 * Math.PI * radius;
+		double area = Math.PI * Math.pow(radius, 2);
+
+		System.out.println("Perimeter is - " + perimeter + "\n" + "Area is - " + area);
+
 	}
 }
