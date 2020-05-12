@@ -8,10 +8,15 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Input a value for inch:");
-		double inch = input.nextDouble();
+		System.out.println("Input number:");
+		double number = input.nextDouble();
 
-		double inchToMeter = inch * 0.0254;
-		System.out.println(inch + " inch is " + inchToMeter + " meters");
+		if (number > 0) {
+			System.out.println("Number is positive");
+		} else if (number < 0) {
+			System.out.println("Number is negative");
+		} else {
+			System.out.println("Number is 0");
+		}
 	}
 }
