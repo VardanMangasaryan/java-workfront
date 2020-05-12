@@ -8,13 +8,11 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Radius =");
-		double radius = input.nextDouble();
+		System.out.println("Input a degree in Fahrenheit:");
+		double temperature = input.nextDouble();
 
-		double perimeter = 2 * Math.PI * radius;
-		double area = Math.PI * Math.pow(radius, 2);
-
-		System.out.println("Perimeter is - " + perimeter + "\n" + "Area is - " + area);
+		double convertedTemperature = (temperature - 32) * 5 / 9;
+		System.out.println(temperature + " degree Fahrenheit is equal to " + convertedTemperature + " in Celsius");
 
 	}
 }
