@@ -8,14 +8,11 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Input first number");
-		int numberOne = input.nextInt();
+		System.out.println("Input a number");
+		int number = input.nextInt();
 
-		System.out.println("Input second number");
-		int numberTwo = input.nextInt();
-
-		int product = numberOne * numberTwo;
-
-		System.out.println(numberOne + " x " + numberTwo + " = " + product);
+		for (int i = 1; i < 11; i++) {
+			System.out.println(number + " x " + i + " = " + number * i);
+		}
 	}
 }
