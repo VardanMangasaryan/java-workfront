@@ -8,11 +8,10 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Input a degree in Fahrenheit:");
-		double temperature = input.nextDouble();
+		System.out.println("Input a value for inch:");
+		double inch = input.nextDouble();
 
-		double convertedTemperature = (temperature - 32) * 5 / 9;
-		System.out.println(temperature + " degree Fahrenheit is equal to " + convertedTemperature + " in Celsius");
-
+		double inchToMeter = inch * 0.0254;
+		System.out.println(inch + " inch is " + inchToMeter + " meters");
 	}
 }
