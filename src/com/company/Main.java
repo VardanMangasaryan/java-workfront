@@ -6,22 +6,36 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int lowerBound = 0, upperBound = 50, randomNumber, inputNumber;
+		int randomNumber1, randomNumber2, result = 0;
+		char mathOperator;
+
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Input number");
-		inputNumber = input.nextInt();
 		Random randomGenerator = new Random();
+		randomNumber1 = randomGenerator.nextInt();
+		randomNumber2 = randomGenerator.nextInt();
 
-		if (inputNumber > 100) {
-			lowerBound = 50;
-			upperBound = inputNumber;
+		System.out.println("There are two random numbers " + randomNumber1 + " and " + randomNumber2 + ":  Type '-', '+', '*', '/' for calculation");
+		mathOperator = input.next().charAt(0);
+
+		switch (mathOperator) {
+			case '+':
+				result = randomNumber1 + randomNumber2;
+				break;
+			case '-':
+				result = randomNumber1 - randomNumber2;
+				break;
+			case '/':
+				result = randomNumber1 / randomNumber2;
+				break;
+			case '*':
+				result = randomNumber1 * randomNumber2;
+				break;
+			default:
+				System.out.println("Invalid math operator");
 		}
-		randomNumber = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
 
-		String numberCast = String.valueOf(randomNumber);
-		System.out.println(numberCast);
-
+		System.out.println(result);
 	}
 }
