@@ -6,14 +6,19 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Scanner input = new Scanner(System.in);
+		Random randomGenerator = new Random();
+		int lowerBound, upperBound, randomNumber1, randomNumber2, sum;
 
-		int number = input.nextInt();
+		lowerBound = 10;
+		upperBound = 100;
 
-		if (number % 2 == 0) {
-			System.out.println("Even");
-		} else {
-			System.out.println("Odd");
-		}
+		randomNumber1 = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
+		randomNumber2 = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
+
+		sum = randomNumber1 + randomNumber2;
+
+		long longSum = (long) sum;
+
+		System.out.println("First numberis: " + randomNumber1 + "\nSecond number is " + randomNumber2 + "\nSum of two numbers is " + longSum);
 	}
 }
