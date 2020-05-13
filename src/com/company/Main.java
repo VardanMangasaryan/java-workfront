@@ -6,28 +6,23 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Scanner input = new Scanner(System.in);
+		short radius = 5;
+		double area, perimeter;
 
-		short daysInMonth = 31;
+		perimeter = 2 * Math.PI * radius;
+		area = Math.PI * Math.pow(radius, 2);
 
-		System.out.println("Enter Month name ");
-
-		//Using toUpperCase method for handling all cases;
-		String monthName = input.nextLine().toUpperCase();
-
-		switch (monthName) {
-			case "APRIL":
-			case "JUNE":
-			case "SEPTEMBER":
-			case "NOVEMBER":
-				daysInMonth = 30;
-				break;
-			//Using 28 as default number of days for February.
-			case "FEBRUARY":
-				daysInMonth = 28;
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+			System.out.println("------MENU-------");
+			System.out.println("Enter 1 for calculating area of the circle\nEnter 2 for calculating perimeter of the circle\nEnter 2 for calculating perimeter of the circle");
+			int entryNumber = scanner.nextShort();
+			if (entryNumber == 1) {
+				System.out.println("Area of circle with radius 5 is equal: " + area);
+			} else if (entryNumber == 2) {
+				System.out.println("Perimeter of circle with radius 5 is equal: " + perimeter);
+			} else if (entryNumber == 3)
 				break;
 		}
-		//For all other months daysInMonth is 31, not writing other cases expecting that there will never be another input:D
-		System.out.println(daysInMonth);
 	}
 }
