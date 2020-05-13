@@ -8,38 +8,26 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 
-		String weekDay = "";
+		short daysInMonth = 31;
 
-		System.out.println("Enter number of weekday 1 - 7");
-		short numberOfWeekDay = input.nextShort();
+		System.out.println("Enter Month name ");
 
+		//Using toUpperCase method for handling all cases;
+		String monthName = input.nextLine().toUpperCase();
 
-		switch (numberOfWeekDay) {
-			case 1:
-				weekDay = "Monday";
+		switch (monthName) {
+			case "APRIL":
+			case "JUNE":
+			case "SEPTEMBER":
+			case "NOVEMBER":
+				daysInMonth = 30;
 				break;
-			case 2:
-				weekDay = "Tuesday";
+			//Using 28 as default number of days for February.
+			case "FEBRUARY":
+				daysInMonth = 28;
 				break;
-			case 3:
-				weekDay = "Wednesday";
-				break;
-			case 4:
-				weekDay = "Thursday";
-				break;
-			case 5:
-				weekDay = "Friday";
-				break;
-			case 6:
-				weekDay = "Saturday";
-				break;
-			case 7:
-				weekDay = "Sunday";
-				break;
-			default:
-				System.out.println("Invalid number of weekday");
 		}
-
-		System.out.println(weekDay);
+		//For all other months daysInMonth is 31, not writing other cases expecting that there will never be another input:D
+		System.out.println(daysInMonth);
 	}
 }
