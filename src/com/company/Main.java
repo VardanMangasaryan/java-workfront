@@ -7,21 +7,16 @@ public class Main {
 	public static void main(String[] args) {
 
 		Random randomGenerator = new Random();
-		int lowerBound, upperBound, randomNumber1, randomNumber2, product, isOdd;
+		int lowerBound, upperBound, randomNumber;
+		double squareOfNumber;
 
 		lowerBound = 10;
 		upperBound = 100;
 
-		randomNumber1 = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
-		randomNumber2 = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
+		randomNumber = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
+		squareOfNumber = Math.pow(randomNumber, 2);
 
-		product = randomNumber1 * randomNumber2;
-		isOdd = product % 2;
+		String stringCast = String.valueOf(squareOfNumber);
 
-		if (isOdd == 0) {
-			System.out.println((long) product);
-		} else {
-			System.out.println((double) product);
-		}
-	}
-}
+		System.out.println(stringCast);
+	}}
