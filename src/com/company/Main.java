@@ -19,4 +19,5 @@ public class Main {
 		String stringCast = String.valueOf(squareOfNumber);
 
 		System.out.println(stringCast);
-	}}
+	}
+}
