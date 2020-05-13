@@ -6,36 +6,40 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int randomNumber1, randomNumber2, result = 0;
-		char mathOperator;
-
-
 		Scanner input = new Scanner(System.in);
 
-		Random randomGenerator = new Random();
-		randomNumber1 = randomGenerator.nextInt();
-		randomNumber2 = randomGenerator.nextInt();
+		String weekDay = "";
 
-		System.out.println("There are two random numbers " + randomNumber1 + " and " + randomNumber2 + ":  Type '-', '+', '*', '/' for calculation");
-		mathOperator = input.next().charAt(0);
+		System.out.println("Enter number of weekday 1 - 7");
+		short numberOfWeekDay = input.nextShort();
 
-		switch (mathOperator) {
-			case '+':
-				result = randomNumber1 + randomNumber2;
+
+		switch (numberOfWeekDay) {
+			case 1:
+				weekDay = "Monday";
 				break;
-			case '-':
-				result = randomNumber1 - randomNumber2;
+			case 2:
+				weekDay = "Tuesday";
 				break;
-			case '/':
-				result = randomNumber1 / randomNumber2;
+			case 3:
+				weekDay = "Wednesday";
 				break;
-			case '*':
-				result = randomNumber1 * randomNumber2;
+			case 4:
+				weekDay = "Thursday";
+				break;
+			case 5:
+				weekDay = "Friday";
+				break;
+			case 6:
+				weekDay = "Saturday";
+				break;
+			case 7:
+				weekDay = "Sunday";
 				break;
 			default:
-				System.out.println("Invalid math operator");
+				System.out.println("Invalid number of weekday");
 		}
 
-		System.out.println(result);
+		System.out.println(weekDay);
 	}
 }
