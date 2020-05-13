@@ -6,18 +6,22 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		int lowerBound = 0, upperBound = 50, randomNumber, inputNumber;
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Input number");
+		inputNumber = input.nextInt();
 		Random randomGenerator = new Random();
-		int lowerBound, upperBound, randomNumber;
-		double squareOfNumber;
 
-		lowerBound = 10;
-		upperBound = 100;
-
+		if (inputNumber > 100) {
+			lowerBound = 50;
+			upperBound = inputNumber;
+		}
 		randomNumber = randomGenerator.nextInt(upperBound - lowerBound) + lowerBound;
-		squareOfNumber = Math.pow(randomNumber, 2);
 
-		String stringCast = String.valueOf(squareOfNumber);
+		String numberCast = String.valueOf(randomNumber);
+		System.out.println(numberCast);
 
-		System.out.println(stringCast);
 	}
 }
