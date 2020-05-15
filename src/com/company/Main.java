@@ -1,16 +1,23 @@
 package com.company;
 
+import java.sql.*;
+import java.util.*;
+
 public class Main {
 
 	public static void main(String[] args) {
-		int num = 100, sumOfEvenNumbers = 0, count = 0, averageOfSum;
+		int num, sumOfNumbers = 0, averageOfNumbers;
 
-		for (int i = 2; i < 100; i += 2) {
-			sumOfEvenNumbers += i;
-			count++;
+		Scanner inputNumber = new Scanner(System.in);
+
+		for (int i = 0; i < 10; i++) {
+			num = inputNumber.nextInt();
+			sumOfNumbers += num;
 		}
-		averageOfSum = sumOfEvenNumbers / count;
 
-		System.out.println(averageOfSum);
+		averageOfNumbers = sumOfNumbers / 10;
+
+		System.out.println("Sum of numbers " + sumOfNumbers);
+		System.out.println("Average of numbers " + averageOfNumbers);
 	}
 }
