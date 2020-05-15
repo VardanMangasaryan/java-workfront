@@ -8,7 +8,7 @@ public class Main {
 
 		int firstNumber = 0, secondNumber = 1, bound;
 
-		String sequenceFibonacci = "0";
+		StringBuilder sequenceFibonacci = new StringBuilder("0");
 
 		Scanner input = new Scanner(System.in);
 
@@ -24,7 +24,7 @@ public class Main {
 				int forNext = firstNumber + secondNumber;
 				firstNumber = secondNumber;
 				secondNumber = forNext;
-				sequenceFibonacci += ", " + firstNumber;
+				sequenceFibonacci.append(", ").append(firstNumber);
 			}
 			System.out.println(sequenceFibonacci);
 		}
