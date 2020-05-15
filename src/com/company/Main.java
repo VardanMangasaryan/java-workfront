@@ -6,30 +6,27 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int number, bound;
-		boolean isPrime = true;
-		Scanner inputNumber = new Scanner(System.in);
+		int firstNumber = 0, secondNumber = 1, bound;
 
-		System.out.println("Input the number (Table to be calculated): ");
+		String sequenceFibonacci = "0";
 
-		number = inputNumber.nextInt();
-		bound = Math.abs(number / 2);
+		Scanner input = new Scanner(System.in);
 
+		System.out.println("Input number of terms to display: ");
+		bound = input.nextInt();
 
-		if (number == 0 || Math.abs(number) == 1) {
-			System.out.println(number + " is not a prime number");
-			isPrime = false;
-		} else {
-			for (int i = 2; i <= bound; i++) {
-				if (number % i == 0) {
-					System.out.println(number + " is not a prime number");
-					isPrime = false;
-					break;
-				}
+		if (bound == 1) {
+			System.out.println(sequenceFibonacci);
+		} else if (bound == 2) {
+			System.out.println(sequenceFibonacci + ", " + secondNumber);
+		} else if (bound > 1) {
+			for (int i = 1; i < bound; i++) {
+				int forNext = firstNumber + secondNumber;
+				firstNumber = secondNumber;
+				secondNumber = forNext;
+				sequenceFibonacci += ", " + firstNumber;
 			}
-		}
-		if (isPrime) {
-			System.out.println(number + " is a prime number");
+			System.out.println(sequenceFibonacci);
 		}
 	}
 }
