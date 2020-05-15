@@ -6,27 +6,13 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int firstNumber = 0, secondNumber = 1, bound;
+		String myString, reversedMyString = "";
 
-		String sequenceFibonacci = "0";
+		myString = "ROBOTS_WILL_KILL_ALL_HUMANZ";
 
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("Input number of terms to display: ");
-		bound = input.nextInt();
-
-		if (bound == 1) {
-			System.out.println(sequenceFibonacci);
-		} else if (bound == 2) {
-			System.out.println(sequenceFibonacci + ", " + secondNumber);
-		} else if (bound > 1) {
-			for (int i = 1; i < bound; i++) {
-				int forNext = firstNumber + secondNumber;
-				firstNumber = secondNumber;
-				secondNumber = forNext;
-				sequenceFibonacci += ", " + firstNumber;
-			}
-			System.out.println(sequenceFibonacci);
+		for (int i = myString.length() - 1; i >= 0; i--) {
+			reversedMyString += myString.charAt(i);
 		}
+		System.out.println(reversedMyString);
 	}
 }
