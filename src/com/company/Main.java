@@ -8,11 +8,11 @@ public class Main {
 
 		Scanner inputNumber = new Scanner(System.in);
 
-		System.out.println("Input number of terms ");
+		System.out.println("Input the number (Table to be calculated): ");
 		int num = inputNumber.nextInt();
 
-		for (int i = 1; i < num + 1; i++) {
-			System.out.println("Number is: " + i + " and cube of the " + i + "is: " + (int)Math.pow(i, 3));
+		for (int i = 1; i < 11; i++) {
+			System.out.println(num + " X " + i + " = " + num * i);
 		}
 	}
 }
