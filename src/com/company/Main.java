@@ -3,11 +3,14 @@ package com.company;
 public class Main {
 
 	public static void main(String[] args) {
-		int num = 100, sumOfOddNumbers = 0;
+		int num = 100, sumOfEvenNumbers = 0, count = 0, averageOfSum;
 
-		for (int i = 1; i < 100; i += 2) {
-			sumOfOddNumbers += i;
+		for (int i = 2; i < 100; i += 2) {
+			sumOfEvenNumbers += i;
+			count++;
 		}
-		System.out.println(sumOfOddNumbers);
+		averageOfSum = sumOfEvenNumbers / count;
+
+		System.out.println(averageOfSum);
 	}
 }
