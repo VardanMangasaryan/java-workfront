@@ -6,27 +6,29 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int firstNumber = 0, secondNumber = 1, bound;
+		int[][] matrix = initializeMatrix(new int[10][10]);
+		printMatrix(matrix);
+	}
 
-		StringBuilder sequenceFibonacci = new StringBuilder("0");
 
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("Input number of terms to display: ");
-		bound = input.nextInt();
-
-		if (bound == 1) {
-			System.out.println(sequenceFibonacci);
-		} else if (bound == 2) {
-			System.out.println(sequenceFibonacci + ", " + secondNumber);
-		} else if (bound > 1) {
-			for (int i = 1; i < bound; i++) {
-				int forNext = firstNumber + secondNumber;
-				firstNumber = secondNumber;
-				secondNumber = forNext;
-				sequenceFibonacci.append(", ").append(firstNumber);
+	public static int[][] initializeMatrix(int[][] matrix) {
+		Random randomGenerator = new Random();
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				int matrixElement = randomGenerator.nextInt(89) + 10;
+				matrix[i][j] = matrixElement;
 			}
-			System.out.println(sequenceFibonacci);
+
+		}
+		return matrix;
+	}
+
+	public static void printMatrix(int[][] matrixToPrint) {
+		for (int i = 0; i < matrixToPrint.length; i++) {
+			for (int j = 0; j < matrixToPrint.length; j++) {
+				System.out.print(matrixToPrint[i][j] + " ");
+			}
+			System.out.println();
 		}
 	}
 }
