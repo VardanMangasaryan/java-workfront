@@ -2,37 +2,53 @@ package com.company;
 
 import java.util.*;
 
+
 public class Main {
 
 	public static void main(String[] args) {
 
-		int[][] matrix = initializeMatrix(10, 15);
-		printMatrix(matrix);
-		System.out.println(maximumValueOfMatrix(matrix));
+		int[] array = new int[10];
+
+		initializeArray(array);
+		printArray(array);
+
+		// Finding index of given element
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Input number to find index in array: ");
+		int number = input.nextInt();
+
+		findAndPrintIndexOfElement(array, number);
+
+		// Sorted array in descending order
+		printArray(descendingSort(array));
+
+		// Sorted array in ascending order
+		printArray(ascendingSort(array));
 
 	}
 
 
-	public static int[][] initializeMatrix(int rows, int columns) {
-		Random randomGenerator = new Random();
-		int[][] matrix = new int[rows][columns];
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < columns; j++) {
-				int matrixElement = randomGenerator.nextInt(89) + 10;
-				matrix[i][j] = matrixElement;
-			}
-
+	public static int[] initializeArray(int[] array) {
+		Random randomNumber = new Random();
+		for (int i = 0; i < array.length; i++) {
+			array[i] = randomNumber.nextInt(89) + 10;
 		}
-		return matrix;
+		return array;
 	}
 
-	public static void printMatrix(int[][] matrix) {
-		for (int[] ints : matrix) {
-			for (int anInt : ints) {
-				System.out.print(anInt + " ");
+	public static void printArray(int[] array) {
+		System.out.println(Arrays.toString(array));
+	}
+
+	public static void findAndPrintIndexOfElement(int[] array, int element) {
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == element) {
+				System.out.println("index of element is: " + i);
+				return;
 			}
-			System.out.println();
 		}
+		System.out.println("Element is not in list");
 	}
 
 	public static int[] ascendingSort(int[] array){
@@ -54,20 +70,23 @@ public class Main {
 		return array;
 	}
 
-	public static int findMaximumOfArray(int[] array){
-		ascendingSort(array);
-		return array[array.length - 1];
-	}
 
-	public static int maximumValueOfMatrix(int[][] matrix){
-		int max = 0;
-		for (int[] ints : matrix) {
-			if (findMaximumOfArray(ints) > max) {
-				max = findMaximumOfArray(ints);
+	public static int[] descendingSort(int[] array){
+		boolean swapped = true;
+		int i = 0;
+		int temp;
+		while (swapped) {
+			swapped = false;
+			i++;
+			for (int j = 0; j < array.length - i; j++) {
+				if (array[j] < array[j + 1]) {
+					temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+					swapped = true;
+				}
 			}
 		}
-		return max;
+		return array;
 	}
-
-
 }
