@@ -21,6 +21,5 @@ public class Movie {
         this.rating = rating;
     }
 
-
-
+//r
 }
