@@ -3,7 +3,7 @@ package com.company;
 public class Movie {
 
     String title;
-    double rating;
+    int rating;
 
     public String getTitle() {
         return title;
@@ -13,13 +13,11 @@ public class Movie {
         this.title = title;
     }
 
-    public double getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
-
-//r
 }
