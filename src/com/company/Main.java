@@ -1,8 +1,6 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -36,12 +34,10 @@ public class Main {
 
 	public static void displayAllMovieTitlesWithHighestRating(Movie[] moviesArray) {
 		int highestRating = findHighestRating(moviesArray);
-		int index = 0;
 		ArrayList<String> moviesWithHighestRating = new ArrayList<>(10);
 		for (Movie movie : moviesArray) {
 			if (movie.getRating() == highestRating) {
-				moviesWithHighestRating.set(index, movie.getTitle());
-				index++;
+				moviesWithHighestRating.add("Movie Title: " + movie.getTitle() + " | Rating: " + movie.getRating());
 			}
 		}
 		System.out.println(moviesWithHighestRating);

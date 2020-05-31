@@ -23,8 +23,8 @@ public class Point {
 		return Math.sqrt(Math.pow(coordinateX, 2) + Math.pow(coordinateY, 2));
 	}
 
-//	public double distance(Point point){
-//		return Math.sqrt((coordinateY-coordinateX)*(x2-x1) + (y2-y1)*(y2-y1));.
-//	}
+	public double distance(Point point) {
+		return Math.sqrt(Math.pow(coordinateX - point.getCoordinateX(), 2) + Math.pow(coordinateY - point.getCoordinateY(), 2));
+	}
 
 }
